@@ -1,7 +1,7 @@
 # BreadFastTask
 ## Summary
 - i use the latest version react native
--and i use redux to make action to fetch and store data in store 
+- and i use redux to make action to fetch and store data in store 
 - use data from store in all app 
 - add gif in splash screen loading 2 secand
 
