@@ -1,9 +1,9 @@
 import React, {useEffect} from "react";
-import {FlatList, ListRenderItem, StyleSheet, Text, View} from "react-native";
+import {FlatList, Image, ListRenderItem, StyleSheet, Text, View} from "react-native";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchComments} from "../../redux/actions/postDetails";
 import {horizontalScale, normalizeFontSize, verticalScale} from "../../utils/functions";
-import {COLORS} from "../../utils/theme";
+import {COLORS, IMAGES} from "../../utils/theme";
 import {HeaderDetails} from "./HeaderDetails";
 import {CommentItem} from "./CommentItem";
 import {CommentType, initialStatesType} from "../../utils/types";
@@ -34,10 +34,12 @@ export const PostDetailsScreen = () =>{
 const ListHeaderComponent = () =>{
     return(
         <View style={styles.ListHeaderComponentContainer} >
+            <View style={styles.titleView} >
+                <Image source={IMAGES.avatar} style={styles.avatar} />
             <Text style={styles.postTitle} >
                 {postDetails?.title}
             </Text>
-
+            </View>
             <Text style={styles.postBody} >
                 {postDetails?.body}
             </Text>
@@ -85,7 +87,8 @@ const styles = StyleSheet.create({
     postTitle:{
         fontSize: normalizeFontSize(20),
         lineHeight: verticalScale(22),
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        flex:1
     },
     postBody:{
         fontSize: normalizeFontSize(16),
@@ -97,5 +100,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginTop: verticalScale(30),
         marginBottom: verticalScale(10)
+    },
+    titleView:{
+        flexDirection: 'row'
+    },
+    avatar:{
+        height: verticalScale(80),
+        width: verticalScale(80)
     }
 })

@@ -1,7 +1,7 @@
 import React from "react";
-import {Pressable, StyleSheet, Text, View} from "react-native";
+import {Image, Pressable, StyleSheet, Text, View} from "react-native";
 import {horizontalScale, normalizeFontSize, verticalScale} from "../../utils/functions";
-import {COLORS} from "../../utils/theme";
+import {COLORS, IMAGES} from "../../utils/theme";
 import {useDispatch} from "react-redux";
 import {savePostDetails} from "../../redux/actions/postDetails";
 import {routeNames} from "../../navigation/routeNames";
@@ -15,9 +15,13 @@ export const HomeRenderItem = ({item}: any) => {
     }
     return(
         <Pressable style={styles.item} onPress={onPressItem} >
-            <Text style={styles.title} numberOfLines={3} >
-                {item?.title}
-            </Text>
+            <View style={styles.avatarView} >
+                <Image source={IMAGES.avatar} style={styles.avatar} />
+                <Text style={styles.title} numberOfLines={3} >
+                    {item?.title}
+                </Text>
+            </View>
+
             <Text style={styles.body} numberOfLines={4} >
                 {item?.body}
             </Text>
@@ -39,7 +43,8 @@ const styles = StyleSheet.create({
         fontSize: normalizeFontSize(18),
         fontWeight: 'bold',
         textAlign: 'left',
-        lineHeight: verticalScale(24)
+        lineHeight: verticalScale(24),
+        flex: 1
     },
     body:{
         fontSize: normalizeFontSize(16),
@@ -47,5 +52,12 @@ const styles = StyleSheet.create({
         marginTop: verticalScale(10),
         lineHeight: verticalScale(20)
     },
+    avatarView:{
+        flexDirection: 'row'
+    },
+    avatar:{
+        height: verticalScale(80),
+        width: verticalScale(80)
+    }
 
 })
