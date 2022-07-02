@@ -5,6 +5,9 @@
 - use data from store in all app 
 - add gif in splash screen loading 2 secand
 
+- Vedio Link
+https://drive.google.com/file/d/10t8xpCOcp_sqEBrJkJNi74MPeGDxaOAV/view?usp=sharing
+
 
 | Android | IOS |
 |---|---|
