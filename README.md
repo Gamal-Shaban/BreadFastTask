@@ -11,13 +11,11 @@ https://drive.google.com/file/d/10t8xpCOcp_sqEBrJkJNi74MPeGDxaOAV/view?usp=shari
 
 | Android | IOS |
 |---|---|
-|![Screenshot_1656774825](https://user-images.githubusercontent.com/17288652/177006297-e1d68855-2559-4ea6-8099-5d7b52d211a1.png) | ![simulator_screenshot_9C26513F-1938-4898-BB19-EC7978C5411B](https://user-images.githubusercontent.com/17288652/177006239-854329ca-b83a-4bba-9b8e-7b5abdbb3746.png)
- |
+| ![Screenshot_1656776100](https://user-images.githubusercontent.com/17288652/177007040-05a5581c-e1dd-44e4-bbc0-2d1197db09ea.png) |![Simulator Screen Shot - iPhone 13 - 2022-07-02 at 17 34 39](https://user-images.githubusercontent.com/17288652/177007054-16a98839-d21c-49eb-b257-c94da0d858ac.png) |
 
 | Android | IOS |
 |---|---|
-| ![Screenshot_1656774938](https://user-images.githubusercontent.com/17288652/177006361-639ee913-8894-451b-b725-cba761f0340b.png) | ![simulator_screenshot_359BFEF7-A039-48D5-961F-711BC6701D33](https://user-images.githubusercontent.com/17288652/177006352-93d7548e-80e6-4a71-9e02-6c943fba4704.png)
-|
+| ![Screenshot_1656776104](https://user-images.githubusercontent.com/17288652/177007076-146ed799-506d-4b48-9b71-493eff9adc09.png) | ![Simulator Screen Shot - iPhone 13 - 2022-07-02 at 17 34 43](https://user-images.githubusercontent.com/17288652/177007081-f360e4d3-4871-4659-b253-f097a51dc86a.png)|
 
 | Android | IOS |
 |---|---|
