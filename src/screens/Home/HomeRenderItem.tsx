@@ -4,15 +4,14 @@ import {horizontalScale, normalizeFontSize, verticalScale} from "../../utils/fun
 import {COLORS} from "../../utils/theme";
 import {useDispatch} from "react-redux";
 import {savePostDetails} from "../../redux/actions/postDetails";
-import {useNavigation} from "@react-navigation/native";
 import {routeNames} from "../../navigation/routeNames";
+import {navigate} from "../../utils/navigation";
 
-export const HomeRenderItem = ({item}) => {
+export const HomeRenderItem = ({item}: any) => {
     const dispatch= useDispatch()
-    const {navigate} = useNavigation()
     const onPressItem = () =>{
         dispatch(savePostDetails(item))
-        navigate(routeNames.POST_DETAILS)
+        navigate(routeNames?.POST_DETAILS)
     }
     return(
         <Pressable style={styles.item} onPress={onPressItem} >

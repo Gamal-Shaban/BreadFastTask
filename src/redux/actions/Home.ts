@@ -4,9 +4,10 @@ import {
 
 } from './types';
 import axios from "axios";
+import {AppDispatch} from "../store";
 
 
-const homeLoading = isLoading => {
+const homeLoading = (isLoading: boolean) => {
   return {
     type: HOME_LOADING,
     payload: { isLoading },
@@ -16,7 +17,7 @@ const homeLoading = isLoading => {
 
 
 export function fetchHomeList() {
-  return async dispatch => {
+  return async (dispatch: AppDispatch) => {
     dispatch(homeLoading(true));
     return axios
         .get('https://gorest.co.in/public/v2/posts')

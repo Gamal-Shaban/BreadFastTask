@@ -6,6 +6,8 @@ import {normalizeFontSize, verticalScale} from "../../utils/functions";
 import {COLORS} from "../../utils/theme";
 import {HomeRenderItem} from "./HomeRenderItem";
 import {Loading} from "../../components/Loading";
+import {CommentType, initialStatesType, PostDetailsType} from "../../utils/types";
+import {AppDispatch} from "../../redux/store";
 
 
 type postType = {
@@ -27,8 +29,8 @@ const Header = () =>{
 
 
 export const HomeScreen = () =>{
-    const dispatch = useDispatch()
-    const {homeData, loading} = useSelector(state => (
+    const dispatch = useDispatch<AppDispatch>()
+    const {homeData, loading} = useSelector((state: initialStatesType) => (
         {
             homeData: state?.homeData?.homeListData,
             loading: state?.homeData?.isLoading
@@ -39,7 +41,7 @@ export const HomeScreen = () =>{
        dispatch(fetchHomeList())
     }, [dispatch]);
 
-    const renderItem = ({item}) =>{
+    const renderItem = ({item}: {item: PostDetailsType}) =>{
         return <HomeRenderItem item={item} />
     }
 

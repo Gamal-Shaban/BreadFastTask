@@ -1,7 +1,7 @@
 import React from "react";
 import {Image, Pressable, StyleSheet, Text, View} from "react-native";
 import {COLORS, IMAGES} from "../../utils/theme";
-import {horizontalScale, normalizeFontSize, verticalScale} from "../../utils/functions";
+import {horizontalScale, IS_IOS, normalizeFontSize, verticalScale} from "../../utils/functions";
 import {useNavigation} from "@react-navigation/native";
 import {useDispatch} from "react-redux";
 import {resetComments} from "../../redux/actions/postDetails";
@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
         paddingRight: horizontalScale(60),
         paddingLeft: horizontalScale(20),
         borderBottomColor: COLORS.GRAY_II,
-        borderBottomWidth: verticalScale(0.5)
+        borderBottomWidth: verticalScale(0.5),
+        paddingTop: IS_IOS? verticalScale(10): verticalScale(25)
     },
     backButton:{
         height: verticalScale(40),

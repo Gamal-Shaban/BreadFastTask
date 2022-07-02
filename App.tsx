@@ -25,12 +25,12 @@ import {appLoaded} from "./src/redux/actions/appState";
 import {IS_IOS} from "./src/utils/functions";
 import {useDispatch} from "react-redux";
 import AppNavigation from "./src/navigation";
+import {AppDispatch} from "./src/redux/store";
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
     const isMounted = useRef(false);
 
-  const dispatch=useDispatch()
+  const dispatch=useDispatch<AppDispatch>()
 
     const seconds =2500
 
@@ -46,9 +46,7 @@ const App = () => {
 
   return (
         <View style={styles.container}>
-         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} >
 
-         </StatusBar>
             <AppNavigation />
 
         </View>

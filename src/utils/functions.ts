@@ -22,14 +22,12 @@ export const BUILD_NO = Number(getBuildNumber());
 export const PLATFORM = Platform.OS;
 export const APP_VERSION = pkg.version;
 
-export const horizontalScale = size => (width / guidelineBaseWidth) * size;
-export const verticalScale = size => (height / guidelineBaseHeight) * size;
-export const normalizeFontSize = size => {
+export const horizontalScale = (size: number) => (width / guidelineBaseWidth) * size;
+export const verticalScale = (size: number) => (height / guidelineBaseHeight) * size;
+export const normalizeFontSize = (size: number) => {
   //812 is the height for iphoneX as this is the stable and our design
   return PixelRatio.roundToNearestPixel(
     (size - 1) * (height / guidelineBaseHeight),
   );
 };
 
-export const arabicToEnglishNumber = number =>
-  number.replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/٫/g, '.');

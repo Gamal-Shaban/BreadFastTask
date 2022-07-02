@@ -1,19 +1,28 @@
 import React, {useEffect} from "react";
-import {FlatList, StyleSheet, Text, View} from "react-native";
+import {FlatList, ListRenderItem, StyleSheet, Text, View} from "react-native";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchComments} from "../../redux/actions/postDetails";
 import {horizontalScale, normalizeFontSize, verticalScale} from "../../utils/functions";
 import {COLORS} from "../../utils/theme";
 import {HeaderDetails} from "./HeaderDetails";
 import {CommentItem} from "./CommentItem";
+import {CommentType, initialStatesType} from "../../utils/types";
+import {AppDispatch, RootState} from "../../redux/store";
+
+type postType ={
+    id: string,
+    user_id: string,
+    title: string,
+    body: string
+}
 
 export const PostDetailsScreen = () =>{
-    const {postDetails, isLoading,commentsList} = useSelector(state => ({
-        postDetails: state?.postDetailsData?.postDetails,
-        isLoading: state?.postDetailsData?.isLoading,
-        commentsList: state?.postDetailsData?.commentsList,
+    const {postDetails, commentsList} = useSelector((state: initialStatesType) => ({
+        postDetails: state.postDetailsData.postDetails,
+        commentsList: state.postDetailsData.commentsList,
     }))
-    const dispatch= useDispatch()
+
+    const dispatch= useDispatch<AppDispatch>()
 
 
     useEffect(() => {
@@ -40,7 +49,7 @@ const ListHeaderComponent = () =>{
         </View>
     )
 }
-    const renderItem = ({item}) =>{
+    const renderItem = ({item}: {item: CommentType}) =>{
     return(
         <CommentItem item={item} />
      )

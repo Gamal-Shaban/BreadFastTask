@@ -6,11 +6,12 @@ import SplashScreenStack from './SplachScreenStack';
 import { navigationRef } from '../utils/navigation';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { COLORS } from '../utils/theme';
+import {initialStatesType} from "../utils/types";
 
 
 const AppNavigation = () => {
-  const { isLoaded } = useSelector(state => ({
-    isLoaded: state.appState.isLoaded,
+  const { isLoaded } = useSelector((state: initialStatesType) => ({
+    isLoaded: state?.appState?.isLoaded,
   }));
   return (
     <NavigationContainer ref={navigationRef}>

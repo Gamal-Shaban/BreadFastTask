@@ -1,4 +1,6 @@
-const initialStates = {
+import {initialStatesType} from "../utils/types";
+
+const initialStates: initialStatesType = {
   appState: {
     isLoaded: false,
   },

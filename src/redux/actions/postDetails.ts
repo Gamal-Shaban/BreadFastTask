@@ -5,9 +5,12 @@ import {
 
 } from './types';
 import axios from "axios";
+import {PostDetailsType} from "../../utils/types";
+import {AppDispatch} from "../store";
 
 
-const postLoading = isLoading => {
+
+const postLoading = (isLoading: boolean) => {
   return {
     type: POST_LOADING,
     payload: { isLoading },
@@ -16,7 +19,7 @@ const postLoading = isLoading => {
 
 
 
-export function savePostDetails(postDetails) {
+export function savePostDetails(postDetails: PostDetailsType) {
   return{
       type: SAVE_POST_DETAILS,
       payload:{
@@ -34,7 +37,7 @@ export const resetComments = () =>{
 
 
 export function fetchComments() {
-    return async dispatch => {
+    return async (dispatch: AppDispatch) => {
         dispatch(postLoading(true));
         return axios
             .get('https://gorest.co.in/public/v2/comments')

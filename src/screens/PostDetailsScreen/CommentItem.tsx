@@ -1,9 +1,10 @@
 import React from "react";
-import {StyleSheet, Text, View} from "react-native";
+import {ListRenderItem, StyleSheet, Text, View} from "react-native";
 import {horizontalScale, normalizeFontSize, verticalScale} from "../../utils/functions";
 import {COLORS} from "../../utils/theme";
+import {CommentType, PostDetailsType} from "../../utils/types";
 
-export const CommentItem = ({item}) =>{
+export const CommentItem = ({item}: {item: CommentType}) =>{
     return(
         <View style={styles.container} >
             <Text style={styles.name} >
